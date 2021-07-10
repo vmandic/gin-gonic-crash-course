@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gin-gonic-crash-course/controller"
-	"gin-gonic-crash-course/service"
+	"github.com/vmandic/gin-gonic-crash-course/controller"
+	"github.com/vmandic/gin-gonic-crash-course/service"
 
 	"github.com/gin-gonic/gin"
 )

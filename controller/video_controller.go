@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"gin-gonic-crash-course/entity"
-	"gin-gonic-crash-course/service"
+	"github.com/vmandic/gin-gonic-crash-course/entity"
+	"github.com/vmandic/gin-gonic-crash-course/service"
 
 	"github.com/gin-gonic/gin"
 )
