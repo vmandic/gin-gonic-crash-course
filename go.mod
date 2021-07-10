@@ -1,4 +1,4 @@
-module gitlab.com/vmandic/gin-gonic-crash-course
+module github.com/vmandic/gin-gonic-crash-course
 
 go 1.16
 
