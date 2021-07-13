@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/vmandic/gin-gonic-crash-course/controller"
+	"github.com/vmandic/gin-gonic-crash-course/middlewares"
 	"github.com/vmandic/gin-gonic-crash-course/service"
 
 	"github.com/gin-gonic/gin"
@@ -13,7 +14,9 @@ var (
 )
 
 func main() {
-	server := gin.Default()
+	server := gin.New()
+	server.Use(gin.Recovery())
+	server.Use(middlewares.Logger())
 
 	server.GET("/test", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
