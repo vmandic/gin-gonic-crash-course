@@ -9,6 +9,7 @@ import (
 	"github.com/vmandic/gin-gonic-crash-course/service"
 
 	"github.com/gin-gonic/gin"
+	gindump "github.com/tpkeeper/gin-dump"
 )
 
 var (
@@ -27,6 +28,8 @@ func main() {
 	server := gin.New()
 	server.Use(gin.Recovery())
 	server.Use(middlewares.Logger())
+	server.Use(middlewares.BasicAuth())
+	server.Use(gindump.Dump())
 
 	server.GET("/test", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
