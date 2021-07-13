@@ -1,6 +1,9 @@
 package main
 
 import (
+	"io"
+	"os"
+
 	"github.com/vmandic/gin-gonic-crash-course/controller"
 	"github.com/vmandic/gin-gonic-crash-course/middlewares"
 	"github.com/vmandic/gin-gonic-crash-course/service"
@@ -13,7 +16,14 @@ var (
 	videoController controller.VideoController = controller.New(videoService)
 )
 
+func setLogOutput() {
+	f, _ := os.Create("gin.log")
+	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
+}
+
 func main() {
+	setLogOutput()
+
 	server := gin.New()
 	server.Use(gin.Recovery())
 	server.Use(middlewares.Logger())
