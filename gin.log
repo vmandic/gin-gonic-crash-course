@@ -6,6 +6,6 @@
 [GIN-debug] GET    /posts                    --> main.main.func2 (5 handlers)
 [GIN-debug] POST   /posts                    --> main.main.func3 (5 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [16 Jul 21 13:19 CEST] POST /posts 400 3.713293ms
-::1 - [16 Jul 21 13:20 CEST] POST /posts 400 715.694µs
-::1 - [16 Jul 21 13:20 CEST] POST /posts 200 460.799µs
+::1 - [16 Jul 21 13:36 CEST] POST /posts 400 956.485µs
+::1 - [16 Jul 21 13:36 CEST] POST /posts 200 499.012µs
+::1 - [16 Jul 21 13:37 CEST] POST /posts 200 530.646µs
