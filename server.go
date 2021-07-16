@@ -2,6 +2,7 @@ package main
 
 import (
 	"io"
+	"net/http"
 	"os"
 
 	"github.com/vmandic/gin-gonic-crash-course/controller"
@@ -42,7 +43,14 @@ func main() {
 	})
 
 	server.POST("/posts", func(ctx *gin.Context) {
-		ctx.JSON(200, videoController.Save(ctx))
+		err := videoController.Save(ctx)
+		if err != nil {
+			ctx.JSON(http.StatusBadRequest, gin.H{
+				"error": err.Error(),
+			})
+		} else {
+			ctx.JSON(200, gin.H{"message": "Input valid."})
+		}
 	})
 
 	server.Run(":8080")
