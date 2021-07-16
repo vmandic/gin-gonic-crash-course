@@ -2,10 +2,18 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /test                     --> main.main.func1 (5 handlers)
-[GIN-debug] GET    /posts                    --> main.main.func2 (5 handlers)
-[GIN-debug] POST   /posts                    --> main.main.func3 (5 handlers)
+[GIN-debug] GET    /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] HEAD   /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] Loaded HTML Templates (4): 
+	- header.html
+	- index.html
+	- 
+	- footer.html
+
+[GIN-debug] GET    /api/test                 --> main.main.func1 (5 handlers)
+[GIN-debug] GET    /api/posts                --> main.main.func2 (5 handlers)
+[GIN-debug] POST   /api/posts                --> main.main.func3 (5 handlers)
+[GIN-debug] GET    /view/videos              --> github.com/vmandic/gin-gonic-crash-course/controller.VideoController.ShowAll-fm (5 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [16 Jul 21 13:36 CEST] POST /posts 400 956.485µs
-::1 - [16 Jul 21 13:36 CEST] POST /posts 200 499.012µs
-::1 - [16 Jul 21 13:37 CEST] POST /posts 200 530.646µs
+::1 - [16 Jul 21 14:41 CEST] GET /view/videos 200 1.274451ms
+::1 - [16 Jul 21 14:42 CEST] GET /view/videos 200 2.632471ms

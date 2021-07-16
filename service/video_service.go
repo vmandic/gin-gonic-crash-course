@@ -16,7 +16,7 @@ func New() VideoService {
 		{
 			Title:       "Video1",
 			Description: "Desc1",
-			URL:         "www.web.com",
+			URL:         "https://www.youtube.com/embed/sDJLQMZzzM4",
 			Author: entity.Person{
 				FirstName: "Jack",
 				LastName:  "Jones",
